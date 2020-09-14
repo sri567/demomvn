@@ -25,4 +25,8 @@
     			  <url>http://3.15.44.68:8081/nexus/content/repositories/RepoR</url>
   	</repository>
   </distributionManagement>
+<properties>
+    <maven.compiler.source>6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+</properties>
 </project>
