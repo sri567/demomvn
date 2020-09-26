@@ -1,11 +1,10 @@
 pipeline{
 agent any
 stages{
-stage('Scm')
-{
-steps
-{
+stage('Scm'){
+steps{
 git "https://github.com/sri567/demomvn.git"
+}
 }
 stage("Build")
 {
@@ -15,5 +14,5 @@ sh ''' eco "this stepto build the project" '''
 }
 }
 }
-}
+
 
