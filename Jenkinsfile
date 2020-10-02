@@ -16,7 +16,16 @@ steps{
 sh "mvn package"
 }
 }
+ 
+ stage("archiveArtifacts")
+{
+steps{
+ archiveArtifacts artifacts: 'target/demoart-*', followSymlinks: false
 }
 }
+ 
+}
+}
+
 
 
