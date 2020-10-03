@@ -34,7 +34,7 @@ steps{
       stage("Quality Gate"){
           sleep(30) {
               def qg = waitForQualityGate()
-              if (qg.status = 'OK') {
+              if (qg.status == 'OK') {
                   echo "quality gate passed"
               }
 			  else {
