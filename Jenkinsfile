@@ -35,6 +35,7 @@ steps{
       stage("Quality Gate"){
 	      steps{
           sleep(30) {
+		  script{
               def qg = waitForQualityGate('sonarquality')
               if (qg.status == 'OK') {
                   echo "quality gate passed"
@@ -43,6 +44,7 @@ steps{
 		 error "Pipeline aborted due to quality gate failure: ${qg.status}"
 			  
 	 	 }
+		  }
 	  }
           }
       }  
