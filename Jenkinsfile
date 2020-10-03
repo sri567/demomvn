@@ -34,7 +34,7 @@ steps{
       
       stage("Quality Gate"){
 	      steps{
-          sleep(60) {
+          sleep(60) 
 		  script{
                qg = waitForQualityGate('sonarquality')
               if (qg.status == 'OK') {
@@ -47,7 +47,7 @@ steps{
 		  }
 	  }
           }
-      }  
+      
  
 }
 }
