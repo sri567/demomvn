@@ -35,14 +35,14 @@ steps{
       stage("Quality Gate"){
 	      steps{
           sleep(30) {
-              def qg = waitForQualityGate()
+              def qg = waitForQualityGate('sonarquality')
               if (qg.status == 'OK') {
                   echo "quality gate passed"
               }
-			  else {
-			  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+	     else {
+		 error "Pipeline aborted due to quality gate failure: ${qg.status}"
 			  
-			  }
+	 	 }
 	  }
           }
       }  
