@@ -34,9 +34,9 @@ steps{
       
       stage("Quality Gate"){
 	      steps{
-          sleep(30) {
+          sleep(60) {
 		  script{
-              def qg = waitForQualityGate('sonarquality')
+               qg = waitForQualityGate('sonarquality')
               if (qg.status == 'OK') {
                   echo "quality gate passed"
               }
