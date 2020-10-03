@@ -25,13 +25,15 @@ steps{
 }
  
  stage("SonarQube") {
+	 steps{
                  withSonarQubeEnv('sonar') {
                  sh 'mvn clean package sonar:sonar'
-                 
+		 }     
           }
       }
       
       stage("Quality Gate"){
+	      steps{
           sleep(30) {
               def qg = waitForQualityGate()
               if (qg.status == 'OK') {
@@ -41,6 +43,7 @@ steps{
 			  error "Pipeline aborted due to quality gate failure: ${qg.status}"
 			  
 			  }
+	  }
           }
       }  
  
