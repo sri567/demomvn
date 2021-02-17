@@ -9,7 +9,7 @@ git "https://github.com/sri567/demomvn.git"
 stage("build")
 {
 steps{
-sh '''mvn package'''
+sh ''' mvn package '''
 }
 }
 }
