@@ -1,37 +1,16 @@
 pipeline{
 agent any
- environment{
-   PATH = "/opt/apache-maven-3.6.3/bin:$PATH"
-
- }
 stages{
-stage('Scm'){
+stage("sc"){
 steps{
 git "https://github.com/sri567/demomvn.git"
 }
 }
-stage("Build")
+stage("build")
 {
 steps{
-sh "mvn package"
+sh '''mvn package'''
 }
 }
- 
- stage("archiveArtifacts")
-{
-steps{
- archiveArtifacts artifacts: 'target/demoart-*', followSymlinks: false
 }
 }
- 
-	stage("deploy")
-	{
-		steps{
-			build 'deploywar'
-		}
-	}
-}
-}
-
-
-
