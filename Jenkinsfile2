@@ -1,0 +1,16 @@
+pipeline{
+agent any
+stages{
+stage("mvn location")
+{
+steps{
+tool name: 'maven', type: 'maven'
+}
+}
+stage("buid"){
+steps{
+sh ''' mvn package '''
+}
+}
+}
+}
