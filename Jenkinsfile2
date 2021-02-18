@@ -12,7 +12,7 @@ sh ''' mvn package '''
 stage("upload artifacts"){
 steps{
 script{
-def mvpath=readMavenPom file : 'pom.xml'
+def mvpath= readMavenPom file : 'pom.xml'
 def mvnrelease= mvpath.version.endsWith("SNAPSHOT") ? "snapshots" : "releases"
 nexusArtifactUploader artifacts:[
 [
