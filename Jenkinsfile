@@ -16,5 +16,29 @@ steps{
 archiveArtifacts artifacts: 'target/demoart-*', followSymlinks: false
 }
  }
+stage("build & SonarQube analysis") {
+    
+            steps {
+              withSonarQubeEnv('sonarqube') {
+                sh 'mvn clean package sonar:sonar'
+              }
+            }
+          }
+          stage("Quality Gate") {
+            steps {
+			sleep(60)
+			  script{
+                qg = waitForQualityGate('sonarqualitygate')
+              if (qg.status == 'OK') {
+			  echo "quality gate passed"
+			  }
+			  else{
+                  error "Pipeline aborted due to quality gate failure: ${qg.status}"
+             
+                
+				}
+              }
+            }
+          }    
 }
 }
