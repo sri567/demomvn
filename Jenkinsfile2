@@ -11,6 +11,7 @@ sh ''' mvn package '''
 }
 stage("upload artifacts"){
 steps{
+script{
 def mvpath=readMavenPom file : 'pom.xml'
 def mvnrelease= mvpath.version.endsWith("SNAPSHOT") ? "snapshots" : "releases"
 nexusArtifactUploader artifacts:[
@@ -28,6 +29,7 @@ nexusVersion: 'nexus2',
 protocol: 'http', 
 repository: mvnrelease, 
 version: '${mvpath.version}'
+}
 }
 }
 }
