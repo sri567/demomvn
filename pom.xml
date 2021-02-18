@@ -14,4 +14,15 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+ <properties>
+  <sonar.host.url>http://18.216.234.93:9000/</sonar.host.url>
+  <sonar.login>27ece8424cc81cdd31d4261237894d11e7b38a23</sonar.login>
+  <sonar.language>java</sonar.language>
+  <sonar.scm.provider>git</sonar.scm.provider>
+</properties>
+<plugin>
+  <groupId>org.sonarsource.scanner.maven</groupId>
+  <artifactId>sonar-maven-plugin</artifactId>
+  <version>3.2</version>
+</plugin>
 </project>
