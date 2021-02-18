@@ -24,7 +24,7 @@ groupId: 'groupid',
 nexusUrl: '18.217.75.161:8081',
 nexusVersion: 'nexus2',
 protocol: 'http', 
-repository: 'central', 
+repository: 'releases', 
 version: '1.2'
 }
 }
