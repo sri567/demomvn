@@ -19,26 +19,4 @@
     <artifactId>jakarta.xml.bind-api</artifactId>
     <version>2.3.2</version>
 </dependency>
-
-<!-- Runtime, com.sun.xml.bind module -->
-<dependency>
-    <groupId>org.glassfish.jaxb</groupId>
-    <artifactId>jaxb-runtime</artifactId>
-    <version>2.3.2</version>
-</dependency>
-  </dependencies>
-  <distributionManagement>
-  	<snapshotRepository>
-    		<id>RepoS</id>
-    		           <url>http://3.15.44.68:8081/nexus/content/repositories/RepoS</url>
-        </snapshotRepository>
-	<repository>
-    		<id>RepoR</id>
-    			  <url>http://3.15.44.68:8081/nexus/content/repositories/RepoR</url>
-  	</repository>
-  </distributionManagement>
-<properties>
-    <maven.compiler.source>6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
-</properties>
 </project>
