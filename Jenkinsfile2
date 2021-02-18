@@ -4,12 +4,6 @@ tools{
 maven 'maven'
 }
 stages{
-stage("mvn location")
-{
-steps{
-tool name: 'maven', type: 'maven'
-}
-}
 stage("buid"){
 steps{
 sh ''' mvn package '''
