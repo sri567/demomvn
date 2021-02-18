@@ -21,7 +21,7 @@ type: 'jar'
 ],
 credentialsId: 'admin',
 groupId: 'groupid', 
-nexusUrl: '18.217.75.161:8081',
+nexusUrl: '18.217.75.161:8081/nexus',
 nexusVersion: 'nexus2',
 protocol: 'http', 
 repository: 'releases', 
