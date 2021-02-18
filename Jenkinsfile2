@@ -17,7 +17,7 @@ nexusArtifactUploader artifacts:[
 [
 artifactId: 'demoart', 
 classifier: '', 
-file: 'target/demoart-1.2.jar', 
+file: 'target/demoart-${mvpath.version}.jar', 
 type: 'jar'
 ]
 ],
