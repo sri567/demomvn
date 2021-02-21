@@ -1,12 +1,19 @@
 pipeline {
 agent any
 {
-
+tool{
+maven: 'Maven'
+}
 stages{
 stage("build")
 {
 sh ''' mvn package '''
 }
+}
+
+stage("archiving artifacts")
+{
+archive '/target/demoart-*'
 }
 
 }
