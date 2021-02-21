@@ -6,13 +6,17 @@ maven 'Maven'
 stages{
 stage("build")
 {
+steps{
 sh ''' mvn package '''
 }
 }
 
 stage("archiving artifacts")
 {
+steps
+{
 archive '/target/demoart-*'
+}
 }
 
 
