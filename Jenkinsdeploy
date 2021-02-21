@@ -10,7 +10,6 @@ steps{
 sh ''' mvn package '''
 }
 }
-
 stage("archiving artifacts")
 {
 steps
