@@ -15,7 +15,7 @@ stage("archiving artifacts")
 {
 steps
 {
-archive '/target/demoart-*'
+archiveArtifacts artifacts: 'target/demoart-*', followSymlinks: false
 }
 }
 }
