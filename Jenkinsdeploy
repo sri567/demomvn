@@ -18,3 +18,4 @@ archiveArtifacts artifacts: 'target/demoart-*', followSymlinks: false
 }
 }
 }
+}
