@@ -21,7 +21,7 @@ archiveArtifacts artifacts: 'target/demoart-*', followSymlinks: false
 stage("call deploy")
 {
 steps{
-build 'Deploy'
+build wait: false, propagate: false, job: 'Deploy'
 }
 }
 
