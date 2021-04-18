@@ -17,10 +17,8 @@ archiveArtifacts artifacts: 'target/*.jar*'
 }
 stage("nexus"){
 steps{
-script {
-                    ver = readMavenPom().getVersion()
-                }
-nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/demoart-${ver}.jar', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '${ver}'
+
+nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/demoart-${POM_VERSION}.jar', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '${POM_VERSION}'
 }
 }
 }
