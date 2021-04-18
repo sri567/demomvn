@@ -4,7 +4,7 @@
   <groupId>groupid</groupId>
   <artifactId>demoart</artifactId>
   <packaging>jar</packaging>
-  <version>1.3</version>
+  <version>1.4</version>
   <name>demoart</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -28,16 +28,7 @@
     <version>2.3.2</version>
 </dependency>
   </dependencies>
-  <distributionManagement>
-  	<snapshotRepository>
-    		<id>RepoS</id>
-    		           <url>http://3.15.44.68:8081/nexus/content/repositories/RepoS</url>
-        </snapshotRepository>
-	<repository>
-    		<id>RepoR</id>
-    			  <url>http://3.14.3.149:8081/nexus/content/repositories/RepoR</url>
-  	</repository>
-  </distributionManagement>
+ 
 <properties>
     <maven.compiler.source>6</maven.compiler.source>
     <maven.compiler.target>1.6</maven.compiler.target>
