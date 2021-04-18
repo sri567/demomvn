@@ -17,7 +17,7 @@ archiveArtifacts artifacts: 'target/*.jar*'
 }
 stage("nexus"){
 steps{
-nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/demoart-1.4.jar', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '1.4'
+nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/${pom.version}', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '${pom.version}'
 }
 }
 }
