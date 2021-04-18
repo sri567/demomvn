@@ -27,6 +27,9 @@ readTrusted 'pom.xml'
 stage("nexus"){
 steps{
 pom = readMavenPom file: 'pom.xml'
+}
+steps{
+
 nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/demoart-${pom.version}.jar', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '${pom.version}'
 }
 }
