@@ -12,7 +12,7 @@ sh '''mvn package'''
 
 stage("archive"){
 steps{
-archiveArtifacts artifacts: 'target/jar*'
+archiveArtifacts artifacts: 'target/*.jar*'
 }
 }
 }
