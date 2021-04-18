@@ -29,8 +29,8 @@ stage("nexus"){
 steps{
 script{
 def pom = readMavenPom file: "pom.xml";
-echo pom.version
-nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}", classifier: '', file: "target/${pom.artifactId}-${pom.version}.${pom.packaging}", type: "${pom.packaging}"]], credentialsId: 'admin', groupId: "${pom.groupId}", nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: "${pom.version}"
+def nexusver=pom.version.endsWith("SNAPSHOT")? "RepoR" : "snapshots"
+nexusArtifactUploader artifacts: [[artifactId: "${pom.artifactId}", classifier: '', file: "target/${pom.artifactId}-${pom.version}.${pom.packaging}", type: "${pom.packaging}"]], credentialsId: 'admin', groupId: "${pom.groupId}", nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: "${nexusver}", version: "${pom.version}"
 }
 }
 }
