@@ -3,6 +3,7 @@ agent any
 environment{
 PATH="/opt/apache-maven-3.8.1/bin:$PATH"
 pom = readMavenPom file: 'pom.xml'
+VERSION = readMavenPom().getVersion()
 }
 
 
@@ -29,7 +30,7 @@ stage("nexus"){
 
 steps{
 
-nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/demoart-${pom.getVersion()}.jar', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '${pom.getVersion()}'
+nexusArtifactUploader artifacts: [[artifactId: 'demoart', classifier: '', file: 'target/demoart-$VERSION.jar', type: 'jar']], credentialsId: 'admin', groupId: 'demogrp', nexusUrl: '3.14.3.149:8081/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'RepoR', version: '$VERSION'
 }
 }
 }
