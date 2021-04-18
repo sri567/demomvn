@@ -4,7 +4,7 @@
   <groupId>groupid</groupId>
   <artifactId>demoart</artifactId>
   <packaging>jar</packaging>
-  <version>1.4</version>
+  <version>1.5</version>
   <name>demoart</name>
   <url>http://maven.apache.org</url>
   <dependencies>
