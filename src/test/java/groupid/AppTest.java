@@ -27,6 +27,11 @@ public class AppTest
     {
         return new TestSuite( AppTest.class );
     }
+    
+     public static Test suite2()
+    {
+        return new TestSuite( AppTest1.class );
+    }
 
     /**
      * Rigourous Test :-)
