@@ -28,6 +28,11 @@ public class AppTest
         return new TestSuite( AppTest.class );
     }
     
+  public static Test suite2()
+    {
+        return 0;
+    }
+    
  
 
     /**
@@ -35,6 +40,6 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( truee );
+        assertTrue( true );
     }
 }
